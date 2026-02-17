@@ -19,6 +19,7 @@ class Solution {
             }
         }
 
+        //important for test case like s=badc and t=baba
         for(int i=0;i<128;i++){
             frq[i]='\0';
         }
