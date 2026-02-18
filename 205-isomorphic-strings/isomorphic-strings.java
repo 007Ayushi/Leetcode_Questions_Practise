@@ -1,47 +1,40 @@
 class Solution {
     public boolean isIsomorphic(String s, String t) {
         
-        //Created a frequency array of size 128
-        char []frq=new char[128];//default value of char is '\0'
+        //Create a frequency Array
+        char []frq=new char[128];//By default the character is \0
 
-        for(int i=0;i<s.length();i++){
-            char st=s.charAt(i);
-            char tt=t.charAt(i);
+        char []sarr=s.toCharArray();
+        char []tarr=t.toCharArray();
 
-            int idx=(int)st;
+        for(int i=0;i<sarr.length;i++){
+            int idx=(int)sarr[i];
+
             if(frq[idx]=='\0'){
-                frq[idx]=tt;
+                frq[idx]=tarr[i];
             }
             else{
-                if(frq[idx]!=tt){
-                    return false;
-                }
+                if(frq[idx]!=tarr[i])return false;
             }
         }
 
-        //important for test case like s=badc and t=baba
-        for(int i=0;i<128;i++){
+
+        //Again fill the frequency array with \0 elements
+        for(int i=0;i<frq.length;i++){
             frq[i]='\0';
         }
 
-        for(int i=0;i<t.length();i++){
-            char st=s.charAt(i);
-            char tt=t.charAt(i);
+        for(int i=0;i<tarr.length;i++){
+            int idx=(int)tarr[i];
 
-            int idx=(int)tt;
             if(frq[idx]=='\0'){
-                frq[idx]=st;
+                frq[idx]=sarr[i];
             }
             else{
-                if(frq[idx]!=st){
-                    return false;
-                }
+                if(frq[idx]!=sarr[i])return false;
             }
         }
 
         return true;
-
-
-
     }
 }
