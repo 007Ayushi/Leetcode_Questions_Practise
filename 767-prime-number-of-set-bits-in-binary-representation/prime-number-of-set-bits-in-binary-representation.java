@@ -1,27 +1,37 @@
 class Solution {
     public int countPrimeSetBits(int left, int right) {
         
-        StringBuilder sb=new StringBuilder();
         int cnt=0;
         for(int i=left;i<=right;i++){
-           int ones=countBits(i);
-            if(isPrime(ones)){
-            cnt++;
+            String binaryNum=convertIntoBinary(i);
+            int Ones=cntOnes(binaryNum);
+            if(prime(Ones)){
+                  cnt++;
             }
         }
         return cnt;
-
     }
-    public int countBits(int n){
-        int count=0;
-        while(n>0){
-            count+=n&1;
-            n=n>>1;
+    public String  convertIntoBinary(int num){
+        StringBuilder sb=new StringBuilder();
+        while(num!=0){
+           int rem=num%2;
+           sb.append(rem);
+           num=num/2;
         }
-        return count;
+        return sb.reverse().toString();
     }
-    public boolean isPrime(int n){
-        return n==2 || n==3 || n==5 || n==7 || n==11 || n==13 || n==17 || n==19;
+    public int cntOnes(String binaryNum){
+        int cnt=0;
+        for(int i=0;i<binaryNum.length();i++){
+            if(binaryNum.charAt(i)=='1'){
+                cnt++;
+            }
+        }
+        return cnt;
     }
-        
+    public boolean prime(int  n){
+
+        return n==2 || n==3 || n==5 || n==7 || n==11 || n==13
+        || n==17 || n==19; 
+    }
 }
