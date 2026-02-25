@@ -10,17 +10,15 @@ class Solution {
             ans[arr[i]]++;
         }
 
-        for (int i = 0; i < ans.length; i++) {
+        for (int i = 1; i < ans.length; i++) {
             if (ans[i] == 0) {
                 ans1.add(i);
             }
         }
 
         for (int i = 0; i < ans1.size(); i++) {
-            return ans1.get(k);
-        }
-       
-       
+            return ans1.get(k-1);
+        } 
         return -1;
 
     }
