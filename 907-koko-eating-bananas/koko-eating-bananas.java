@@ -3,6 +3,7 @@ class Solution {
 
      //Binary Search
      int mx=Integer.MIN_VALUE;
+
      for(int i=0;i<piles.length;i++){
         mx=Integer.max(mx,piles[i]);
      }
