@@ -17,11 +17,9 @@ class Solution {
         }
 
         for (int i = 0; i < ans1.size(); i++) {
-             if (k <= ans1.size()) {
-            return ans1.get(k );
+            return ans1.get(k);
         }
-        else return -1;
-        }
+       
        
         return -1;
 
