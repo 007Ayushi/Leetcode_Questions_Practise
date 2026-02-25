@@ -1,6 +1,12 @@
 class Solution {
     public int minEatingSpeed(int[] piles, int h) {
 
+    //TC-O(N) to find the max ele+ sum/mid and
+    // * log(max) (binary search)
+
+    //tc=O(n)*log(max ele)
+
+
      //Binary Search
      int mx=Integer.MIN_VALUE;
 
@@ -23,7 +29,7 @@ class Solution {
 
         if(k<=h){
             ans=mid;
-            hi=mid-1;
+            hi=mid-1;//Wants to minimize the k 
         }
         else{
             lo=mid+1;
