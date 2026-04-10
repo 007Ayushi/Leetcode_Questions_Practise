@@ -1,16 +1,16 @@
 class Solution {
     public int missingNumber(int[] nums) {
 
-     //Method 1  
+     //Method 1  - tc=O(N) and sc=O(1)
      int n=nums.length;
      int sumofnos=n*(n+1)/2;
 
-     int sum=0;
+     int array_sum=0;
      for(int i=0;i<n;i++){
-        sum+=nums[i];
+        array_sum+=nums[i];
      } 
 
-     int missing_no=sumofnos-sum;
+     int missing_no=sumofnos-array_sum;
      return missing_no;
     }
 }
