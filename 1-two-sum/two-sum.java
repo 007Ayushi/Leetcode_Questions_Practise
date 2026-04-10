@@ -24,10 +24,10 @@ class Solution {
        HashMap<Integer,Integer> mp=new HashMap<>();
        int []ans=new int[2];
        for(int i=0;i<nums.length;i++){
-            int ele=target-nums[i];
+            int remaining=target-nums[i];
 
             if(!mp.containsKey(nums[i])){
-                mp.put(ele,i);
+                mp.put(remaining,i);
             }
             else{
                 ans[0]=mp.get(nums[i]);
