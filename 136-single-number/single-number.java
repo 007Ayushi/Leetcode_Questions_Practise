@@ -1,26 +1,11 @@
 class Solution {
     public int singleNumber(int[] nums) {
         
-        //tc=O(N) and sc=O(N)
-        HashMap<Integer,Integer> mp=new HashMap<>();
+        //Most optimal solution- Xor 
+        int xor=0;
         for(int i=0;i<nums.length;i++){
-
-            int ele=nums[i];
-            if(mp.containsKey(ele)){
-                int frq=mp.get(ele);
-                mp.put(ele,frq+1);
-            }
-            else{
-                mp.put(ele,1);
-            }
+            xor^=nums[i];
         }
-
-        for(int ele:mp.keySet()){
-            if(mp.get(ele)==1){
-                return ele;
-            }
-        }
-
-        return -1;
+        return xor;
     }
 }
