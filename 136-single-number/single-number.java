@@ -1,6 +1,7 @@
 class Solution {
     public int singleNumber(int[] nums) {
         
+        //tc=O(N) and sc=O(N)
         HashMap<Integer,Integer> mp=new HashMap<>();
         for(int i=0;i<nums.length;i++){
 
