@@ -1,8 +1,14 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
-        int i=0,j=0;
+        
+        // steps
+        //1.Remove the duplicates 
+        //2.Return the no. of unique elements k
 
-        while(j<nums.length){
+        //TWO POINTER APPROACH
+        //tc=o(n) and sc=O(1)
+        int i=0,j=0,n=nums.length;
+        while(j<n){
             if(nums[i]==nums[j]){
                 j++;
             }
@@ -13,5 +19,6 @@ class Solution {
             }
         }
         return i+1;
+
     }
 }
