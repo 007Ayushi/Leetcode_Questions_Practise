@@ -1,6 +1,7 @@
 class Solution {
     public void rotate(int[] nums, int k) {
         
+        //tc=o(N)+o(N)+o(N) = O(3N) = O(N) and sc is O(1)
         int n=nums.length;
         //It reduces large k to an equivalent rotation within array size.
         if(k>n)k=k%n;
