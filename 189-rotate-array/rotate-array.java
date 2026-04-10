@@ -1,25 +1,21 @@
 class Solution {
     public void rotate(int[] nums, int k) {
+        
+        int n=nums.length;
+        //It reduces large k to an equivalent rotation within array size.
+        if(k>n)k=k%n;
+        reverse(nums,0,n-k-1);
+        reverse(nums,n-k,n-1);
+        reverse(nums,0,n-1);
+    }
 
-        //tc= O(n) and sc=O(n)
-       //First way
-       int n=nums.length;
-       k=k%n;
-       ArrayList<Integer> ans=new ArrayList<>();
-       for(int i=n-k;i<nums.length;i++){
-                ans.add(nums[i]);
-       }
-
-       for(int i=0;i<n-k;i++){
-        ans.add(nums[i]);
-       }
-
-       for(int i=0;i<ans.size();i++){
-        nums[i]=ans.get(i);
-       } 
-
-       
+    public void reverse(int []nums,int i,int j){
+        while(i<=j){
+            int temp=nums[i];
+            nums[i]=nums[j];
+            nums[j]=temp;
+            i++;
+            j--;
+        }
     }
 }
-// This is a simple approach using extra space (O(n)).
-// But we can optimize it to O(1) using the reverse method
