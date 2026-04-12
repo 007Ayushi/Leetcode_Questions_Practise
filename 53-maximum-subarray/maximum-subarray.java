@@ -1,8 +1,9 @@
 class Solution {
     public int maxSubArray(int[] nums) {
 
-       //Base Case
-       if(nums.length==1)return nums[0];
+       
+       //TC=o(N) AND SC=o(1)
+       
        int sum=0;
        int maxsum=Integer.MIN_VALUE;
 
