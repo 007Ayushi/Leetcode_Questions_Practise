@@ -2,7 +2,7 @@ class Solution {
     public int majorityElement(int[] nums) {
         
         int n=nums.length;
-        // Method 1
+        // Method 1 - HashMap tc=O(N) and sc=O(N)
         HashMap<Integer,Integer> mp=new HashMap<>();
         for(int i=0;i<nums.length;i++){
 
