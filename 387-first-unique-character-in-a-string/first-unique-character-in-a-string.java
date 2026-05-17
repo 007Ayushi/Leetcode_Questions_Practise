@@ -1,21 +1,15 @@
 class Solution {
     public int firstUniqChar(String s) {
-        
-        LinkedHashMap<Character,Integer> mp=new  LinkedHashMap<>();
+
+        int []frq=new int[26];
         for(int i=0;i<s.length();i++){
 
-            char ch=s.charAt(i);
-            if(mp.containsKey(ch)){
-                int frq=mp.get(ch);
-                mp.put(ch,frq+1);
-            }
-            else{
-                mp.put(ch,1);
-            }
+            frq[s.charAt(i)-'a']++;
         }
 
         for(int i=0;i<s.length();i++){
-            if(mp.get(s.charAt(i))==1){
+
+            if(frq[s.charAt(i)-'a']==1){
                 return i;
             }
         }
