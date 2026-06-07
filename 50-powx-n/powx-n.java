@@ -10,6 +10,7 @@ class Solution {
 
     public double Power(double x, int n){
 
+        //base case
         if(n==0)return 1;
         double ans=Power(x,n/2);
         if(n%2==0)return ans*ans;
