@@ -8,7 +8,7 @@ class Solution {
 
     public void helper(int []nums,List<Integer> ans,int i){
         
-        if(i==nums.length){
+        if(i>=nums.length){
             arr.add(new ArrayList<>(ans));
             return ;
         }
